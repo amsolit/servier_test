@@ -1,0 +1,7 @@
+DATA_PATH = "./data/"
+OUTPUT_PATH = "./out/"
+DRUGS_FILE = DATA_PATH + "drugs.csv"
+PUBMED_CSV_FILE = DATA_PATH + "pubmed.csv"
+PUBMED_JSON_FILE = DATA_PATH + "pubmed.json"
+CLINICAL_TRIALS_FILE = DATA_PATH + "clinical_trials.csv"
+#OUTPUT_FILE = OUTPUT_PATH + "drug_mentions_graph.json"
