@@ -39,3 +39,40 @@ Les actions à considérer en cas de forte volumétrie sont les suivantes:
 - modifier l'infrastructure en utilisant un orchestrateur tels que Airflow, Dagster sur un cluster Kubernetes ou Argo. Le déploiement sur cluster Kubernetes permettra de paralléliser les traitements à l'aide du déploiement des pods qui permettent une bonne scalabilité et une tolérance aux pannes.
 - mettre en place un système de login afin de pouvoir suivre l'intégration parallèle et massive des données et de réprendre au bon endroit après une erreur.
 - mettre en place un système de monitoring: les alertes et rapports automatiques permettent une réaction rapide face aux dégradations de performances.
+
+# SQL
+
+## Chiffre d’affaires journalier (du 1er janvier 2019 au 31 décembre 2019)
+
+```sql
+SELECT 
+    date AS date, 
+    SUM(prod_price * prod_qty) AS ventes 
+FROM 
+    TRANSACTIONS 
+WHERE 
+    date BETWEEN '2019-01-01' AND '2019-12-31' 
+GROUP BY 
+    date 
+ORDER BY 
+    date ;
+```
+
+## Ventes par client et par type de produit (MEUBLE et DECO) sur l’année 2019
+
+```sql
+SELECT 
+    T.client_id AS client_id,
+    SUM(CASE WHEN P.product_type = 'MEUBLE' THEN T.prod_price * T.prod_qty ELSE 0 END) AS ventes_meuble,
+    SUM(CASE WHEN P.product_type = 'DECO' THEN T.prod_price * T.prod_qty ELSE 0 END) AS ventes_deco
+FROM 
+    TRANSACTIONS T
+JOIN 
+    PRODUCT_NOMENCLATURE P ON T.prod_id = P.product_id
+WHERE 
+    T.date BETWEEN '2019-01-01' AND '2019-12-31'
+GROUP BY 
+    T.client_id
+ORDER BY 
+    T.client_id;
+```
