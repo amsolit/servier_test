@@ -32,13 +32,15 @@ Les éléments à prendre en compte sont:
 **Pourriez-vous décrire les modifications qu’il faudrait apporter, s’il y en a, pour prendre en considération de
 telles volumétries ?**
 
-Les actions à considérer en cas de forte volumétrie sont les suivantes:
-- utiliser une base de données scalable tels que Big Query, Redshift, Snowflake afin de réduire les coûts en optimisant le stockage et les calculs
-- optimiser les traitement en utilisant des clés de partitionnement et de clustering : dans le cas où les traitements sont exportés sur un outil comme Big Query, il sera important d'avoir des données classées. Celà augmentera la vitesse de traitement.
-- changer la technologie de manipulation de données. Nous pouvons penser à utiliser une technologie plus adaptée tel que spark si un cluster est à notre disposition ou bien à paralélliser les traitements par batch (Dask, multiprocessing)
-- modifier l'infrastructure en utilisant un orchestrateur tels que Airflow, Dagster sur un cluster Kubernetes ou Argo. Le déploiement sur cluster Kubernetes permettra de paralléliser les traitements à l'aide du déploiement des pods qui permettent une bonne scalabilité et une tolérance aux pannes.
-- mettre en place un système de login afin de pouvoir suivre l'intégration parallèle et massive des données et de réprendre au bon endroit après une erreur.
-- mettre en place un système de monitoring: les alertes et rapports automatiques permettent une réaction rapide face aux dégradations de performances.
+Les actions à considérer en cas de forte volumétrie sont les suivantes :
+
+- Utiliser une base de données scalable telles que BigQuery, Redshift, Snowflake afin de réduire les coûts en optimisant le stockage et les calculs.
+- Optimiser les traitements en utilisant des clés de partitionnement et de clustering : dans le cas où les traitements sont exportés sur un outil comme BigQuery, il sera important d'avoir des données classées. Cela augmentera la vitesse de traitement.
+- Changer la technologie de manipulation de données. Nous pouvons penser à utiliser une technologie plus adaptée telle que Spark si un cluster est à notre disposition, ou bien à paralléliser les traitements par batch (Dask, multiprocessing).
+- Modifier l'infrastructure en utilisant un orchestrateur tel qu'Airflow, Dagster sur un cluster Kubernetes ou Argo. Le déploiement sur un cluster Kubernetes permettra de paralléliser les traitements à l'aide du déploiement des pods, qui permettent une bonne scalabilité et une tolérance aux pannes.
+- Mettre en place un système de login afin de pouvoir suivre l'intégration parallèle et massive des données et de reprendre au bon endroit après une erreur.
+- Mettre en place un système de monitoring : les alertes et rapports automatiques permettent une réaction rapide face aux dégradations de performances.
+
 
 # SQL
 
