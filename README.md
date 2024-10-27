@@ -4,12 +4,19 @@ Ce document accompagne le code qui a été réalisé dans le cadre du test techn
 
 # Documentation 
 
-Pour lancer ce code :
+## Pour lancer ce code :
 - cloner ce répertoire
 - se positionner à la racine du dossier
 - exécuter `docker build -f ./DockerFile -t test_servier .`
 - exécuter `docker run test_servier`
-- le graph sera exporté dans le fichier ./out/ 
+- le graph sera exporté dans le fichier ./out/. Le résultat est dilibérement laisser dans le repo afin de pouvoir le consulter.
+
+## Dans le cas où vous ne souhaitez pas utiliser Docker :
+- cloner le répertoire
+- se positionner à la racine
+- installer python 3.13
+- exécuter `pip install -r requirements`
+- exécuter ` python3 ./src/main.py`
 
 # Réponses
 
