@@ -1,6 +1,6 @@
 Bonjour, 
 
-Ce document accompagne le code qui a été réalisé dans le cadre du test technique Servier. Vous y trouverez des informations concernant le code ainsi que des réponses aux questions mentionnés dans l'énoncé. 
+Ce document accompagne le code qui a été réalisé dans le cadre du test technique Servier. Vous y trouverez des informations concernant le code ainsi que des réponses aux questions mentionnées dans l'énoncé. 
 
 # Documentation 
 
