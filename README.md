@@ -5,9 +5,11 @@ Ce document accompagne le code qui a été réalisé dans le cadre du test techn
 # Documentation 
 
 Pour lancer ce code :
+- cloner ce répertoire
 - se positionner à la racine du dossier
 - exécuter `docker build -f ./DockerFile -t test_servier .`
 - exécuter `docker run test_servier`
+- le graph sera exporté dans le fichier ./out/ 
 
 # Réponses
 
