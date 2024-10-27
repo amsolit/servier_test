@@ -7,8 +7,8 @@ Ce document accompagne le code qui a été réalisé dans le cadre du test techn
 
 # Réponses
 
-*Quels sont les éléments à considérer pour faire évoluer votre code afin qu’il puisse gérer de grosses
-volumétries de données (fichiers de plusieurs To ou millions de fichiers par exemple) ?*
+**Quels sont les éléments à considérer pour faire évoluer votre code afin qu’il puisse gérer de grosses
+volumétries de données (fichiers de plusieurs To ou millions de fichiers par exemple) ?**
 
 Les éléments à prendre en compte sont:
 - l'architecture : Assurer la scalabilité avec des infrastructures adaptées (clusters, bases de données distribuées).
@@ -16,8 +16,8 @@ Les éléments à prendre en compte sont:
 - la technologie de traitement de données : Choisir des outils scalables pour la manipulation (BigQuery, Redshift).
 - le coût : Contrôler l’utilisation des ressources et opter pour des solutions cloud pay-as-you-go pour une gestion efficace des dépenses.
 
-*Pourriez-vous décrire les modifications qu’il faudrait apporter, s’il y en a, pour prendre en considération de
-telles volumétries ?*
+**Pourriez-vous décrire les modifications qu’il faudrait apporter, s’il y en a, pour prendre en considération de
+telles volumétries ?**
 
 Les actions à considérer en cas de forte volumétrie sont les suivantes:
 - utiliser une base de données scalable tels que Big Query, Redshift, Snowflake afin de réduire les coûts en optimisant le stockage et les calculs
