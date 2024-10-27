@@ -49,7 +49,7 @@ SELECT
     date AS date, 
     SUM(prod_price * prod_qty) AS ventes 
 FROM 
-    TRANSACTIONS 
+    TRANSACTION 
 WHERE 
     date BETWEEN '2019-01-01' AND '2019-12-31' 
 GROUP BY 
@@ -66,13 +66,11 @@ SELECT
     SUM(CASE WHEN P.product_type = 'MEUBLE' THEN T.prod_price * T.prod_qty ELSE 0 END) AS ventes_meuble,
     SUM(CASE WHEN P.product_type = 'DECO' THEN T.prod_price * T.prod_qty ELSE 0 END) AS ventes_deco
 FROM 
-    TRANSACTIONS T
+    TRANSACTION T
 JOIN 
-    PRODUCT_NOMENCLATURE P ON T.prod_id = P.product_id
+    PRODUCT_NOMENCLATURE P ON T.prop_id = P.product_id
 WHERE 
     T.date BETWEEN '2019-01-01' AND '2019-12-31'
 GROUP BY 
-    T.client_id
-ORDER BY 
     T.client_id;
 ```
